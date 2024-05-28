@@ -1,0 +1,17 @@
+.list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listItem {
+    margin-bottom: 2rem;
+  }
+  
+  .listItem h2 {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .listItem p {
+    margin: 0;
+  }
+  

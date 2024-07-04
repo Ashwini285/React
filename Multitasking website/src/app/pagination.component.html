@@ -1,0 +1,10 @@
+<div class="pagination-container">
+    <div class="pagination">
+      <span class="arrow">&larr;</span> Older
+      <span class="pages">
+        <span *ngFor="let page of pages" [class.highlight]="page === 2" class="page">{{ page }}</span>
+      </span>
+      Newer <span class="arrow">&rarr;</span>
+    </div>
+  </div>
+  

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weekly Meal Generator</h1>
+
+        <!-- Weekly Meal Generator Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody id="weeklyMealPlanTableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            generateWeeklyMealPlan();
+        });
+
+        function generateWeeklyMealPlan() {
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const meals = ['Breakfast', 'Lunch', 'Dinner'];
+
+            const weeklyMealPlanTableBody = document.getElementById('weeklyMealPlanTableBody');
+            weeklyMealPlanTableBody.innerHTML = '';
+
+            meals.forEach(meal => {
+                const row = document.createElement('tr');
+                const mealNameCell = document.createElement('td');
+                mealNameCell.textContent = meal;
+                row.appendChild(mealNameCell);
+
+                daysOfWeek.forEach(day => {
+                    const cell = document.createElement('td');
+                    const mealImage = document.createElement('img');
+                    const recipeInfo = document.createElement('p');
+
+                    mealImage.src = getRandomMealImage(); // Placeholder for the function to get a random meal image
+                    mealImage.alt = `${meal} Image`;
+
+                    // Placeholder recipe information
+                    recipeInfo.textContent = `Ingredients: `;
+
+                    cell.appendChild(mealImage);
+                    cell.appendChild(recipeInfo);
+                    row.appendChild(cell);
+                });
+
+                weeklyMealPlanTableBody.appendChild(row);
+            });
+        }
+
+        // Placeholder function to get a random meal image
+        function getRandomMealImage() {
+            const mealImages = [
+                'https://mealplannerapp.siddhantgoswam1.repl.co/',
+                'path/to/image/burger.jpg',
+                'path/to/dinner_image.jpg/burger.jpg'
+            ];
+            const randomIndex = Math.floor(Math.random() * mealImages.length);
+            return mealImages[randomIndex];
+        }
+    </script>
+</body>
+</html>

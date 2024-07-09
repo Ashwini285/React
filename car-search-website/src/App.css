@@ -1,0 +1,74 @@
+/* App.css */
+
+.calculator {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for specific buttons */
+button.operator {
+  background-color: #e74c3c;
+}
+
+button.operator:hover {
+  background-color: #c0392b;
+}
+
+button.clear {
+  background-color: #95a5a6;
+}
+
+button.clear:hover {
+  background-color: #7f8c8d;
+}
+
+button.equal {
+  grid-column: span 4;
+  background-color: #2ecc71;
+}
+
+button.equal:hover {
+  background-color: #27ae60;
+}
+
+/* Additional styling for specific buttons can be added here */
